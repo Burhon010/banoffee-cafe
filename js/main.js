@@ -9,7 +9,7 @@
 
   var flat = [];
   menu.forEach(function (cat) {
-    cat.items.forEach(function (it) { flat.push({ name: it.name, price: it.price, img: it.img, cat: cat.title }); });
+    cat.items.forEach(function (it) { flat.push({ name: it.name, desc: it.desc || "", price: it.price, img: it.img, cat: cat.title }); });
   });
 
   function leafPath(bx, by, ang, len, w) {
@@ -83,14 +83,15 @@
     var cards = cat.items.map(function (it, i) {
       var html =
         '<button class="card reveal" style="--d:' + ((i % 4) * 0.08).toFixed(2) + 's" data-index="' + idx + '" aria-label="' + it.name + ', ' + it.price + ' сомони">' +
-          '<span class="card__media"><img src="assets/menu/' + it.img + '.webp" alt="' + it.name + '" loading="lazy" decoding="async" width="820" height="1025"><span class="card__zoom">' + zoomIcon + "</span></span>" +
-          '<span class="card__body"><span class="card__name">' + it.name + '</span><span class="card__price">' + it.price + " <small>смн</small></span></span>" +
+          '<span class="card__media"><img src="assets/menu/' + it.img + '.webp" alt="' + it.name + '"' + (it.pos ? ' style="object-position:' + it.pos + '"' : '') + ' loading="lazy" decoding="async" width="820" height="1025"><span class="card__zoom">' + zoomIcon + "</span></span>" +
+          '<span class="card__body"><span class="card__text"><span class="card__name">' + it.name + '</span>' + (it.desc ? '<span class="card__desc">' + it.desc + '</span>' : '') + '</span><span class="card__price">' + it.price + " <small>смн</small></span></span>" +
         "</button>";
       idx++;
       return html;
     }).join("");
     sec.innerHTML =
       '<div class="cat__head reveal"><h3 class="cat__title" id="t-' + cat.id + '">' + cat.title + '</h3><span class="cat__count">' + String(cat.items.length).padStart(2, "0") + "</span></div>" +
+      (cat.note ? '<p class="cat__note reveal"><i></i>' + cat.note + '</p>' : '') +
       '<div class="cards">' + cards + "</div>";
     grid.appendChild(sec);
 
@@ -307,7 +308,7 @@
     var d = flat[lbIndex];
     lbImg.src = "assets/menu/" + d.img + ".webp";
     lbImg.alt = d.name;
-    lbName.textContent = d.name;
+    lbName.textContent = d.desc ? d.name + " · " + d.desc : d.name;
     lbPrice.textContent = d.price + " сомони";
     lbCat.textContent = d.cat;
     if (animate) { lbImg.classList.remove("is-swap"); void lbImg.offsetWidth; lbImg.classList.add("is-swap"); }

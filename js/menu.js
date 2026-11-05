@@ -71,5 +71,49 @@ window.BANOFFEE_MENU = [
       { name: "Хачапури по-мегрельски", price: 85, img: "khachapuri-megrel" },
       { name: "Хачапури по-аджарски", price: 75, img: "khachapuri-adjar" }
     ]
+  },
+  {
+    id: "bread",
+    title: "Хлеб и выпечка",
+    note: "Каждый день свежий хлеб — уже с 10 утра",
+    items: [
+      { name: "Классический тартин", desc: "Французский хлеб", price: 25, img: "tartine-classic" },
+      { name: "Гречневый тартин", desc: "Французский хлеб", price: 25, img: "tartine-buckwheat" },
+      { name: "Тартин со льном", price: 25, img: "tartine-flax", pos: "center 75%" },
+      { name: "Тыквенный хлеб", price: 15, img: "bread-pumpkin" },
+      { name: "Диетический хлеб на закваске", price: 15, img: "bread-diet" },
+      { name: "Хлеб «Три семечки»", desc: "за 1 шт", price: 15, img: "bread-three-seeds" },
+      { name: "Свежие круассаны", price: 15, img: "croissants" }
+    ]
+  },
+  {
+    id: "desserts",
+    title: "Десерты",
+    items: [
+      { name: "Тирамису", price: 45, img: "tiramisu" },
+      { name: "Лимонный тарт", price: 40, img: "tart-lemon" },
+      { name: "Тарт клубника-кокос", price: 30, img: "tart-strawberry-coconut" },
+      { name: "Корпусное пирожное «Фисташка»", price: 69, img: "pistachio-cake" },
+      { name: "Корпусный десерт «Манго»", price: 59, img: "mango-dessert" },
+      { name: "Корпусное пирожное со вкусом кофе", price: 48, img: "coffee-cake" },
+      { name: "Павлова с ягодной начинкой", price: 20, img: "pavlova" },
+      { name: "Капкейк клубника-ваниль", price: 20, img: "cupcake-strawberry" },
+      { name: "Капкейк вишня-шоколад", price: 22, img: "cupcake-cherry" }
+    ]
+  },
+  {
+    id: "trifles",
+    title: "Трайфлы и муссы",
+    items: [
+      { name: "Тропический трайфл", price: 45, img: "trifle-tropical" },
+      { name: "Мусс «Фисташка-малина»", price: 45, img: "mousse-pistachio-raspberry" },
+      { name: "Трайфл банан-клубника", price: 45, img: "trifle-banana-strawberry" },
+      { name: "Трайфл вишня-шоколад", price: 45, img: "trifle-cherry-chocolate" },
+      { name: "Трайфл «Наполеон»", price: 40, img: "trifle-napoleon" },
+      { name: "Трайфл банан-клубника большой", desc: "800 грамм", price: 150, img: "trifle-big" },
+      { name: "Медовый трайфл", desc: "мини", price: 15, img: "trifle-honey" },
+      { name: "Трайфл ваниль-смородина", desc: "мини", price: 15, img: "trifle-vanilla-currant" },
+      { name: "Фисташковый трайфл", desc: "мини", price: 15, img: "trifle-pistachio" }
+    ]
   }
 ];
