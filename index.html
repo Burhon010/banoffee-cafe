@@ -136,7 +136,11 @@
 
     <div class="tabs-wrap" id="tabsWrap">
       <div class="container">
-        <div class="tabs" id="tabs" role="tablist" aria-label="Категории меню"><span class="tabs__pill" id="tabsPill"></span></div>
+        <div class="tabs-box" id="tabsBox">
+          <div class="tabs" id="tabs" role="tablist" aria-label="Категории меню"><span class="tabs__pill" id="tabsPill"></span></div>
+          <button class="tabs-hint tabs-hint--left" id="hintLeft" type="button" aria-label="Предыдущие категории" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="tabs-hint tabs-hint--right" id="hintRight" type="button" aria-label="Ещё категории" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
       </div>
     </div>
 

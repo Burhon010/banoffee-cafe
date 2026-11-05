@@ -158,6 +158,19 @@
   tabEls.forEach(function (t, i) {
     t.addEventListener("click", function () { goToCategory(i); });
   });
+
+  var tabsBox = $("#tabsBox");
+  function updateHints() {
+    var max = tabs.scrollWidth - tabs.clientWidth;
+    tabsBox.classList.toggle("can-left", tabs.scrollLeft > 6);
+    tabsBox.classList.toggle("can-right", max > 6 && tabs.scrollLeft < max - 6);
+  }
+  tabs.addEventListener("scroll", updateHints, { passive: true });
+  window.addEventListener("resize", updateHints);
+  $("#hintRight").addEventListener("click", function () { tabs.scrollBy({ left: tabs.clientWidth * 0.6, behavior: "smooth" }); });
+  $("#hintLeft").addEventListener("click", function () { tabs.scrollBy({ left: -tabs.clientWidth * 0.6, behavior: "smooth" }); });
+  updateHints();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(updateHints);
   tabs.addEventListener("keydown", function (e) {
     var i = tabEls.indexOf(activeTab);
     if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
