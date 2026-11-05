@@ -357,14 +357,6 @@ body.header-shown .tabs-wrap { top: var(--header-h); }
 .card.reveal { transform: translateY(50px); }
 .card.reveal.is-in { transform: none; }
 
-.soon {
-  display: flex; align-items: center; gap: 28px; margin-top: 80px; padding: 30px 36px;
-  border-radius: 28px; background: var(--mocha); color: var(--cream);
-  box-shadow: 0 30px 60px -35px rgba(42, 30, 23, .6);
-}
-.soon img { width: 84px; height: 84px; border-radius: 50%; flex-shrink: 0; animation: spin 30s linear infinite; }
-.soon h3 { margin: 0 0 4px; font-family: var(--serif); font-size: 30px; font-weight: 500; }
-.soon p { margin: 0; opacity: .85; }
 
 /* contacts */
 .contacts { position: relative; overflow: hidden; padding: clamp(90px, 11vw, 150px) 0; background: var(--espresso); color: var(--cream); }
@@ -479,8 +471,6 @@ a.contacts__value:hover { color: var(--caramel); }
   .card__name { font-size: 18px; }
   .card__price { font-size: 14px; padding: 5px 11px; }
   .card__zoom { display: none; }
-  .soon { flex-direction: column; text-align: center; padding: 30px 24px; margin-top: 60px; }
-  .soon h3 { font-size: 26px; }
   .contacts__map { aspect-ratio: 1 / 1.1; }
   .lightbox__nav { top: auto; bottom: 22px; margin-top: 0; width: 48px; height: 48px; }
   .lightbox__nav--prev { left: calc(50% - 64px); }
