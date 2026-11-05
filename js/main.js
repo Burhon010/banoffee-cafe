@@ -112,29 +112,60 @@
   var catEls = Array.prototype.slice.call(grid.querySelectorAll(".cat"));
   var activeTab = null;
 
-  function setActive(i) {
+  function setActive(i, force) {
     var t = tabEls[i];
-    if (!t || t === activeTab) return;
-    if (activeTab) { activeTab.classList.remove("is-active"); activeTab.setAttribute("aria-selected", "false"); }
+    if (!t || (t === activeTab && !force)) return;
+    tabEls.forEach(function (el) {
+      var on = el === t;
+      el.classList.toggle("is-active", on);
+      el.setAttribute("aria-selected", on ? "true" : "false");
+      el.tabIndex = on ? 0 : -1;
+    });
     activeTab = t;
-    t.classList.add("is-active");
-    t.setAttribute("aria-selected", "true");
     pill.style.width = t.offsetWidth + "px";
     pill.style.transform = "translateX(" + t.offsetLeft + "px)";
     var target = t.offsetLeft - (tabs.clientWidth - t.offsetWidth) / 2;
-    tabs.scrollTo({ left: target, behavior: reduceMotion ? "auto" : "smooth" });
+    tabs.scrollTo({ left: Math.max(0, target), behavior: reduceMotion ? "auto" : "smooth" });
   }
 
-  var lockSpy = 0;
+  var scrollLock = false, lockTimer = 0, lockMax = 0;
+  function releaseLock() {
+    clearTimeout(lockTimer); clearTimeout(lockMax);
+    if (!scrollLock) return;
+    scrollLock = false;
+    lastY = window.scrollY;
+    requestTick();
+  }
+  function goToCategory(i) {
+    var el = catEls[i];
+    if (!el) return;
+    scrollLock = true;
+    header.classList.add("is-hidden");
+    body.classList.remove("header-shown");
+    setActive(i, true);
+    var y = el.getBoundingClientRect().top + window.scrollY - tabsWrap.offsetHeight - 16;
+    if (Math.abs(y - window.scrollY) < 2) { releaseLock(); return; }
+    window.scrollTo({ top: y, behavior: reduceMotion ? "auto" : "smooth" });
+    clearTimeout(lockMax);
+    lockMax = setTimeout(releaseLock, 2500);
+  }
+  window.addEventListener("scroll", function () {
+    if (!scrollLock) return;
+    clearTimeout(lockTimer);
+    lockTimer = setTimeout(releaseLock, 160);
+  }, { passive: true });
+
   tabEls.forEach(function (t, i) {
-    t.addEventListener("click", function () {
-      var el = document.getElementById(t.dataset.target);
-      lockSpy = Date.now() + 900;
-      activeTab = null;
-      setActive(i);
-      var y = el.getBoundingClientRect().top + window.scrollY - tabsWrap.offsetHeight - 10;
-      window.scrollTo({ top: y, behavior: reduceMotion ? "auto" : "smooth" });
-    });
+    t.addEventListener("click", function () { goToCategory(i); });
+  });
+  tabs.addEventListener("keydown", function (e) {
+    var i = tabEls.indexOf(activeTab);
+    if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+      e.preventDefault();
+      var n = (i + (e.key === "ArrowRight" ? 1 : -1) + tabEls.length) % tabEls.length;
+      goToCategory(n);
+      tabEls[n].focus({ preventScroll: true });
+    }
   });
 
   var revealIO = new IntersectionObserver(function (entries) {
@@ -184,18 +215,20 @@
     var y = window.scrollY;
     var heroH = hero.offsetHeight;
     header.classList.toggle("is-solid", y > 30);
-    var hide = y > heroH * 0.6 && y > lastY && !body.classList.contains("nav-open");
-    if (Math.abs(y - lastY) > 4) {
-      header.classList.toggle("is-hidden", hide);
-      body.classList.toggle("header-shown", !hide);
+    if (!scrollLock) {
+      var hide = y > heroH * 0.6 && y > lastY && !body.classList.contains("nav-open");
+      if (Math.abs(y - lastY) > 4) {
+        header.classList.toggle("is-hidden", hide);
+        body.classList.toggle("header-shown", !hide);
+      }
+      lastY = y;
     }
-    lastY = y;
     fab.classList.toggle("is-visible", y > heroH * 0.7);
 
     var stuckTop = body.classList.contains("header-shown") ? header.offsetHeight : 0;
     tabsWrap.classList.toggle("is-stuck", tabsWrap.getBoundingClientRect().top <= stuckTop + 1 && grid.getBoundingClientRect().bottom > 120);
 
-    if (Date.now() > lockSpy) {
+    if (!scrollLock) {
       var line = tabsWrap.getBoundingClientRect().bottom + 40;
       var current = 0;
       for (var i = 0; i < catEls.length; i++) {
