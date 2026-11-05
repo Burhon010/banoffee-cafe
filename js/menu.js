@@ -98,7 +98,7 @@ window.BANOFFEE_MENU = [
       { name: "Корпусное пирожное со вкусом кофе", price: 48, img: "coffee-cake" },
       { name: "Павлова с ягодной начинкой", price: 20, img: "pavlova" },
       { name: "Капкейк клубника-ваниль", price: 20, img: "cupcake-strawberry" },
-      { name: "Капкейк вишня-шоколад", price: 22, img: "cupcake-cherry" }
+      { name: "Капкейк вишня-шоколад", price: 20, img: "cupcake-cherry" }
     ]
   },
   {
