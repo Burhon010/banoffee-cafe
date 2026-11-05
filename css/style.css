@@ -380,6 +380,13 @@ a.contacts__value:hover { color: var(--caramel); }
 .wordmark--footer { width: 190px; color: var(--cream); margin-bottom: 10px; }
 .footer p { margin: 0; }
 .footer__copy { font-size: 13px; opacity: .6; }
+.dev { display: grid; justify-items: center; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(247, 241, 233, .08); width: min(420px, 100%); }
+.dev__btn { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: rgba(247, 241, 233, .38); transition: color .3s; padding: 4px 8px; }
+.dev__btn b { font-weight: 600; color: rgba(247, 241, 233, .55); transition: color .3s; }
+.dev__btn:hover, .dev__btn:hover b, .dev.is-open .dev__btn b { color: var(--caramel); }
+.dev__phone { display: block; max-height: 0; opacity: 0; transform: translateY(-6px); overflow: hidden; font-size: 15px; font-weight: 600; letter-spacing: .04em; color: var(--cream); transition: max-height .5s var(--ease), opacity .4s var(--ease), transform .5s var(--ease), margin .5s var(--ease); }
+.dev.is-open .dev__phone { max-height: 40px; opacity: 1; transform: none; margin-top: 6px; }
+.dev__phone:hover { color: var(--caramel); }
 
 /* fab */
 .call-fab {

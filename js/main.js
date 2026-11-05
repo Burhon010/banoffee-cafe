@@ -218,6 +218,7 @@
   var tabsWrap = $("#tabsWrap");
   var fab = $(".call-fab");
   var hero = $("#hero");
+  var contactsEl = $("#contacts");
   var heroVisual = $("#heroVisual");
   var depthEls = heroVisual ? Array.prototype.slice.call(heroVisual.querySelectorAll("[data-depth]")) : [];
   var aboutImg = $(".about__arch img");
@@ -237,7 +238,7 @@
       }
       lastY = y;
     }
-    fab.classList.toggle("is-visible", y > heroH * 0.7);
+    fab.classList.toggle("is-visible", y > heroH * 0.7 && contactsEl.getBoundingClientRect().top > innerHeight * 0.85);
 
     var stuckTop = body.classList.contains("header-shown") ? header.offsetHeight : 0;
     tabsWrap.classList.toggle("is-stuck", tabsWrap.getBoundingClientRect().top <= stuckTop + 1 && grid.getBoundingClientRect().bottom > 120);
@@ -353,6 +354,12 @@
   }, { passive: true });
 
   $("#year").textContent = new Date().getFullYear();
+  var dev = $("#dev"), devBtn = $("#devBtn"), devPhone = $("#devPhone");
+  devBtn.addEventListener("click", function () {
+    var open = dev.classList.toggle("is-open");
+    devBtn.setAttribute("aria-expanded", open);
+    devPhone.tabIndex = open ? 0 : -1;
+  });
 
   var pre = $("#preloader");
   var started = performance.now();
