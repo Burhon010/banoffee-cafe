@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Banoffee — Cake &amp; Bakery · Душанбе</title>
+<meta name="description" content="Banoffee Café — место, где люди собираются за вкусом и остаются за атмосферой. Завтраки, паста, салаты, супы и выпечка. Душанбе, Айни 42. Ежедневно 8:00–00:00.">
+<meta name="theme-color" content="#9a7860">
+<meta property="og:title" content="Banoffee — Cake & Bakery">
+<meta property="og:description" content="Место, где люди собираются за вкусом и остаются за атмосферой. Душанбе, Айни 42.">
+<meta property="og:image" content="assets/logo-round.png">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/logo-round.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-loading">
+
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__logo"><img src="assets/logo-round.png" alt="" width="512" height="512"></div>
+  <div class="preloader__line"><span></span></div>
+</div>
+
+<header class="header" id="header">
+  <div class="header__inner">
+    <a href="#top" class="header__brand" aria-label="Banoffee — на главную"><span class="wordmark"></span></a>
+    <nav class="nav" aria-label="Основное меню">
+      <a href="#menu">Меню</a>
+      <a href="#about">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="header__phone" href="tel:+992170447777">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      <span>+992 170 44 77 77</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <nav>
+    <a href="#menu">Меню</a>
+    <a href="#about">О нас</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <div class="mobile-nav__info">
+    <a href="tel:+992170447777">+992 170 44 77 77</a>
+    <span>Айни 42 · 8:00 — 00:00</span>
+  </div>
+</div>
+
+<main id="top">
+
+  <section class="hero" id="hero">
+    <div class="leaves" aria-hidden="true"><svg class="leaves__svg" id="leaves" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice"></svg></div>
+    <div class="hero__grain" aria-hidden="true"></div>
+
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <p class="eyebrow hero__eyebrow" data-hero><span class="status" id="status"><i></i><b>Открыто</b></span> Cafe &amp; Bakery · Душанбе</p>
+        <h1 class="hero__title">
+          <span class="line"><span data-hero>Место, где люди</span></span>
+          <span class="line"><span data-hero>собираются <em>за вкусом</em></span></span>
+          <span class="line"><span data-hero>и остаются</span></span>
+          <span class="line"><span data-hero><em>за атмосферой</em></span></span>
+        </h1>
+        <div class="hero__actions" data-hero>
+          <a href="#menu" class="btn btn--light">Смотреть меню
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="tel:+992170447777" class="btn btn--ghost">Позвонить</a>
+        </div>
+        <ul class="hero__facts" data-hero>
+          <li><span>Адрес</span>Айни 42</li>
+          <li><span>Ежедневно</span>8:00 — 00:00</li>
+        </ul>
+      </div>
+
+      <div class="hero__visual" id="heroVisual">
+        <figure class="hero__photo hero__photo--main" data-depth="0.06">
+          <img src="assets/menu/shakshuka.webp" alt="Шакшука в Banoffee" width="820" height="1025" fetchpriority="high">
+        </figure>
+        <figure class="hero__photo hero__photo--a" data-depth="0.14">
+          <img src="assets/menu/hk-waffles.webp" alt="Гонконгские вафли с мороженым" width="820" height="1025">
+        </figure>
+        <figure class="hero__photo hero__photo--b" data-depth="0.1">
+          <img src="assets/menu/croissant-trout.webp" alt="Круассан с форелью" width="820" height="1025">
+        </figure>
+        <div class="badge" data-depth="0.2" aria-hidden="true">
+          <svg viewBox="0 0 200 200">
+            <defs><path id="circlePath" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+            <text><textPath href="#circlePath">banoffee · cake &amp; bakery · Айни 42 · </textPath></text>
+          </svg>
+          <img src="assets/logo-round.png" alt="" width="512" height="512">
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-hint" aria-label="Листать вниз"><span></span></a>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track" id="marquee"></div>
+  </div>
+
+  <section class="about" id="about">
+    <div class="container about__grid">
+      <div class="about__media reveal">
+        <div class="about__arch"><img src="assets/menu/english.webp" alt="Английский завтрак" loading="lazy" width="820" height="1025"></div>
+        <div class="about__round"><img src="assets/menu/hk-waffles.webp" alt="" loading="lazy" width="820" height="1025"></div>
+      </div>
+      <div class="about__text">
+        <p class="eyebrow reveal">О нас</p>
+        <h2 class="section-title reveal">Тёплый свет, <em>вкусный кофе</em> и&nbsp;блюда, ради которых хочется вернуться</h2>
+        <p class="lead reveal">Banoffee — уютное кафе и пекарня в самом сердце Душанбе. Мы готовим завтраки весь день, свежую пасту, салаты, супы и хачапури прямо из печи. Приходите на утренний кофе, обед с друзьями или поздний ужин: мы открыты до полуночи.</p>
+        <div class="stats">
+          <div class="stat reveal"><b data-count="30">30</b><sup>+</sup><span>блюд в меню</span></div>
+          <div class="stat reveal"><b data-count="16">16</b><span>часов в день открыты</span></div>
+          <div class="stat reveal"><b data-count="7">7</b><span>дней в неделю</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="menu__head">
+        <p class="eyebrow reveal">Наше меню</p>
+        <h2 class="section-title reveal">Меню <em>Banoffee</em></h2>
+        <p class="lead reveal">Цены указаны в сомони.</p>
+      </div>
+    </div>
+
+    <div class="tabs-wrap" id="tabsWrap">
+      <div class="container">
+        <div class="tabs" id="tabs" role="tablist" aria-label="Категории меню"><span class="tabs__pill" id="tabsPill"></span></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="menu__grid" id="menuGrid" aria-live="polite"></div>
+      <div class="soon reveal">
+        <img src="assets/logo-round.png" alt="" loading="lazy" width="512" height="512">
+        <div>
+          <h3>Десерты, торты и напитки</h3>
+          <p>Скоро здесь появятся наши десерты и выпечка. А пока их можно попробовать в кафе на Айни 42.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacts" id="contacts">
+    <div class="leaves leaves--soft" aria-hidden="true"><svg class="leaves__svg" id="leaves2" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice"></svg></div>
+    <div class="container contacts__grid">
+      <div class="contacts__info">
+        <p class="eyebrow reveal">Ждём вас в гости</p>
+        <h2 class="section-title reveal">Приходите <em>за вкусом</em></h2>
+        <ul class="contacts__list">
+          <li class="reveal">
+            <span class="contacts__label">Адрес</span>
+            <span class="contacts__value">Душанбе, улица Айни 42</span>
+            <span class="contacts__sub">Ainy street 42, Dushanbe, Tajikistan</span>
+          </li>
+          <li class="reveal">
+            <span class="contacts__label">Телефон</span>
+            <a class="contacts__value" href="tel:+992170447777">+992 170 44 77 77</a>
+          </li>
+          <li class="reveal">
+            <span class="contacts__label">Часы работы</span>
+            <span class="contacts__value">Ежедневно 8:00 — 00:00</span>
+          </li>
+        </ul>
+        <div class="contacts__actions reveal">
+          <a class="btn btn--light" href="tel:+992170447777">Позвонить</a>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query=Banoffee+Cafe+%26+Bakery+Dushanbe" target="_blank" rel="noopener">Маршрут</a>
+        </div>
+      </div>
+      <div class="contacts__map reveal">
+        <iframe title="Banoffee на карте" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Banoffee+Dushanbe&z=16&hl=ru&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <span class="wordmark wordmark--footer"></span>
+    <p>Место, где люди собираются за вкусом и остаются за атмосферой ✨</p>
+    <p class="footer__copy">© <span id="year">2026</span> Banoffee Cake &amp; Bakery · Душанбе, Айни 42</p>
+  </div>
+</footer>
+
+<a class="call-fab" href="tel:+992170447777" aria-label="Позвонить в Banoffee">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+</a>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Фото блюда" hidden>
+  <button class="lightbox__close" id="lbClose" aria-label="Закрыть"><span></span><span></span></button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Предыдущее блюдо"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <figure class="lightbox__figure">
+    <img id="lbImg" src="" alt="">
+    <figcaption><span id="lbCat"></span><b id="lbName"></b><em id="lbPrice"></em></figcaption>
+  </figure>
+  <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Следующее блюдо"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+</div>
+
+<script src="js/menu.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
